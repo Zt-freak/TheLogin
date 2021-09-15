@@ -1,0 +1,18 @@
+<div *ngIf="!isValid">
+    Nee.
+</div>
+<form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+    <ul>
+        <li>
+            <label for="username">Username: </label>
+            <input type="text" formControlName="username">
+        </li>
+        <li>
+            <label for="password">Password: </label>
+            <input type="password" formControlName="password">
+        </li>
+        <li>
+            <button type="submit" [disabled]="!loginFormGroup.valid">Submit</button>
+        </li>
+    </ul>
+</form>
